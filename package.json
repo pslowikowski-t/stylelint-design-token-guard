@@ -1,0 +1,41 @@
+{
+  "name": "stylelint-design-token-guard",
+  "version": "0.1.0",
+  "description": "A Stylelint plugin to enforce design tokens with configurable matching from a JSON file.",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-plugin",
+    "css",
+    "scss",
+    "less",
+    "design-tokens",
+    "tokens"
+  ],
+  "author": "Piotr Slowikowski",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^8.4.33",
+    "postcss-value-parser": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "stylelint": "^16.0.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.10.0 || ^16.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+} 
