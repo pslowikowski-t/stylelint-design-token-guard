@@ -124,7 +124,7 @@ The plugin analyzes CSS declarations. For each property, it checks if it belongs
 
 ## Contributing
 
-If you have ideas for improvements or have found a bug, feel free to open issues or pull requests on the [GitHub project page](https://github.com/YOUR_USERNAME/stylelint-design-token-guard). (Remember to update this link!)
+If you have ideas for improvements or have found a bug, feel free to open issues or pull requests on the [GitHub project page](https://github.com/pslowikowski-t/stylelint-design-token-guard).
 
 ## License
 
