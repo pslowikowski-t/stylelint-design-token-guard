@@ -108,15 +108,16 @@ const ruleImpl = (primaryOption: boolean, secondaryOptionsObject: RuleOptions | 
               if (context.fix && node.value !== tokenToSuggest) {
                 node.value = tokenToSuggest;
                 decl.value = parsedValue.toString();
+              } else if (!context.fix) {
+                stylelint.utils.report({
+                  message: (messages.exactMatch as (...args: any[]) => string)(tokenToSuggest, originalValue, propertyName),
+                  node: decl,
+                  index: valueNodeStartIndexInDecl,
+                  endIndex: valueNodeEndIndexInDecl,
+                  result: result,
+                  ruleName,
+                } as Problem);
               }
-              stylelint.utils.report({
-                message: (messages.exactMatch as (...args: any[]) => string)(tokenToSuggest, originalValue, propertyName),
-                node: decl,
-                index: valueNodeStartIndexInDecl,
-                endIndex: valueNodeEndIndexInDecl,
-                result: result,
-                ruleName,
-              } as Problem);
 
               // Return false to stop the walk
               return false;
@@ -178,7 +179,7 @@ if (plugin && typeof plugin === 'object' && plugin !== null) {
   (plugin as any).messages = messages; // For discoverability by Stylelint
   (plugin as any).ruleName = ruleName; // For discoverability by Stylelint
   (plugin as any).meta = {
-    url: "https://github.com/YOUR_USERNAME/stylelint-text-app-token-guard/blob/main/README.md", // TODO: Replace with your actual repo URL
+    url: "https://github.com/pslowikowski-t/stylelint-design-token-guard/blob/main/README.md",
     fixable: true,
   } as RuleMeta;
 }
